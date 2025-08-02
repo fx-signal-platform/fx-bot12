@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forex Signal Dashboard</title>
+  <style>
+    body { font-family: Arial; background: #f8f8f8; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; background-color: #fff; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+    th { background-color: #333; color: white; }
+  </style>
+</head>
+<body>
+  <h1>📈 Forex Signal Bot Dashboard</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Pair</th>
+        <th>Direction</th>
+        <th>Entry</th>
+        <th>Stop Loss</th>
+        <th>Take Profit</th>
+        <th>RR</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for signal in signals %}
+      <tr>
+        <td>{{ signal.pair }}</td>
+        <td>{{ signal.direction }}</td>
+        <td>{{ signal.entry }}</td>
+        <td>{{ signal.sl }}</td>
+        <td>{{ signal.tp }}</td>
+        <td>{{ signal.rr }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
